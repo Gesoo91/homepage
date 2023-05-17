@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="day9_q74.css">
+        <script src="day9_q74.js"> </script>
+        <title>DOM</title>
+    </head>
+    <body>
+        <!-- // id	pw	를 입력 받는 폼을 만들기		 -->
+        <div id="box">
+            <div id="loginBox">
+            <form>
+                <table>
+                    <tr>
+                        <td>id:</td>
+                        <td><input id="id" placeholder="아이디" size="14"><br></td>
+                    </tr>
+                    <tr>
+                        <td>pw:</td>
+                        <td><input id="pw" type="password" placeholder="비밀번호"size="14"></td>
+                    </tr>
+                </table>
+                <!-- 테이블을 쓰는건 별로 좋지 않다. 간단한거 할때나 하자. -->
+                
+            <input type="button" onclick="login()" value="로그인">
+            <a href="reg_member.html">
+                <input type="button" onclick="registerUser()" value="회원가입">
+            </a>
+            
+            </form>
+            </div>
+        </div>
+    </body>
+</html>
