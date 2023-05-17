@@ -11,6 +11,9 @@ window.onload = function(){ // html 문서가 다 읽어진 후에 실행되는 
     login_box = document.getElementById("loginBox");
     input_id = document.getElementById("id");
     input_pw = document.getElementById("pw");
+    currenttime = document.getElementById("timenow")
+    // time_in(); //이걸 안넣어서 함수가 적용되지않고있었다.
+    init()
 //todo
 
     // str_id = input_id.value;
@@ -19,7 +22,55 @@ window.onload = function(){ // html 문서가 다 읽어진 후에 실행되는 
     
 
 }
-
+function time_in(){
+    var now = new Date(); // 이걸 함수 밖에 두고 interval을 주니 변화가 없음. 이함수를 반복시켜야 시간을 계속 받아오니 안에다 넣어야한다.
+    var year = now.getFullYear() + "년";
+    var month = (now.getMonth() + 1) + "월";
+    var date = now.getDate() + "일";
+    // var timeString = now.toLocaleTimeString();
+    var hours = now.getHours() +":";
+    if(hours<10){
+        hours = "0"+hours;
+    }
+    var minutes = now.getMinutes()+":";
+    if(minutes<10){
+        minutes = "0"+minutes;
+    }
+    var seconds = now.getSeconds();
+    if(seconds<10){
+        seconds = "0"+seconds;
+    }
+    // var millisec = now.getMilliseconds();
+    var day = "&nbsp"+now.getDay();
+    if(day == 0){
+        day = "일요일";
+    }
+    else if(day == 1){
+        day = "월요일";
+    }
+    else if(day == 2){
+        day = "화요일";
+    }
+    else if(day == 3){
+        day = "수요일";
+    }
+    else if(day == 4){
+        day = "목요일";
+    }
+    else if(day == 5){
+        day = "금요일";
+    }
+    else {
+        day = "토요일";
+    }
+    now_date = year+month+date+day;
+    time = hours+minutes+seconds;
+    currenttime.innerText = now_date + time;
+}
+function init(){
+    time_in();
+    setInterval(time_in, 1000);
+}
 
 function login(){
     var local_id = input_id.value;
@@ -42,3 +93,4 @@ function login(){
 function registerUser(){
     
 }
+
