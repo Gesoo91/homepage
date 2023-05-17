@@ -1,0 +1,15 @@
+.phone-input-container {
+    display: flex;
+    gap: 5px;
+
+}
+
+.phone-input-box {
+    flex: 30px 40px 40px;
+    width: 110px;
+}
+
+#regist {
+    width: 100px;
+    height: 30px;
+}
